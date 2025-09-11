@@ -1,0 +1,8 @@
+run : 
+	zig run src/main.zig
+build :
+	zig build
+test :
+	zig test src/main.zig
+fmt :
+	zig fmt src/main.zig

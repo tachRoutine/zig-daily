@@ -10,7 +10,7 @@ pub fn main() !void {
         .name = "Alice",
         .age = 30,
     };
-    print(user);
+    print("{}", .{user});
     print("User: {s}, Age: {d}\n", .{user.name, user.age});
     print("Hello, world!\n", .{});
     // Prints to stderr, ignoring potential errors.

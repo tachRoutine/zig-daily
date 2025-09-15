@@ -6,6 +6,8 @@ const User = struct {
 };
 const CustomError = error{InvalidAge, UnrealisticAge};
 const print = std.debug.print;
+
+
 pub fn main() !void {
     const user = User{
         .name = "Alice",

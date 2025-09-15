@@ -1,6 +1,6 @@
 const std = @import("std");
 
-const User = struct { name: []const u8, age: i32 };
+const User = struct { name: []const u8, age: i32, greetUser: fn() void };
 
 const CustomError = error{ InvalidAge, UnrealisticAge, HIIIIIIIII };
 const print = std.debug.print;
@@ -9,6 +9,9 @@ pub fn main() !void {
     const user = User{
         .name = "Alice",
         .age = -1,
+        .greetUser = fn() void {
+            print("Hello, {s}!\n", .{user.name});
+        },
     };
     if (user.age < 0) {
         print("Error: Invalid age {d}\n", .{user.age});

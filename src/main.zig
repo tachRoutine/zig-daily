@@ -2,16 +2,15 @@ const std = @import("std");
 
 const CustomError = error{ InvalidAge, UnrealisticAge, HIIIIIIIII };
 const print = std.debug.print;
-
+const User = struct {
+    name: []const u8,
+    age: i32,
+    fn greetUser(self: *User) void {
+        print("Hello, {s}!\n", .{self.name});
+    }
+};
 pub fn main() !void {
-    const User = struct {
-        name: []const u8,
-        age: i32,
-        fn greetUser(self: *User) void {
-            print("Hello, {s}!\n", .{self.name});
-        }
-    };
-    const user = User{
+    var user = User{
         .name = "Alice",
         .age = -1,
     };

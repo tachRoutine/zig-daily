@@ -5,11 +5,14 @@ const CustomError: type = error{ InvalidAge, UnrealisticAge, HIIIIIIIII };
 pub const print = std.debug.print;
 
 pub fn main() !void {
-    var userStruct = user.User{
+    const userStruct = user.User{
         .name = "Alice",
         .age = 100000,
     };
-    userStruct.greetUser();
+    print("User: {s}, Age: {d}\n", .{userStruct.name, userStruct.age});
+    //Yeah yeah iam complicating this 
+    var newUser = user.createUser("Tach", 10000000000000);
+    print(newUser.greetUser(), .{});
     if (userStruct.age < 0) {
         print("Error: Invalid age {d}\n", .{userStruct.age});
         return CustomError.HIIIIIIIII;

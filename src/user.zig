@@ -1,16 +1,18 @@
 const main = @import("main");
+const string: type  =  []const u8;
 
 pub const User: type = struct {
     name: []const u8,
-    age: i32,
-    fn greetUser(self: *User) void {
+    age: i64,
+    pub fn greetUser(self: *User) void {
         main.print("Hello, {s}!\n", .{self.name});
     }
 };
 
-pub fn getUserInfo() User {
+
+pub fn createUser(name: string, age: i64) User {
     return User{
-        .name = "Bob",
-        .age = 30,
+        .name = name,
+        .age = age,
     };
 }

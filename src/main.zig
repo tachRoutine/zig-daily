@@ -11,8 +11,8 @@ pub fn main() !void {
     };
     print("User: {s}, Age: {d}\n", .{userStruct.name, userStruct.age});
     //Yeah yeah iam complicating this 
-    var newUser = user.createUser("Tach", 10000000000000);
-    print(newUser.greetUser(), .{});
+    const newUser = user.createUser("Tach", 10000000000000);
+    print("User: {s}, Age: {d}\n", .{newUser.name, newUser.age});
     if (userStruct.age < 0) {
         print("Error: Invalid age {d}\n", .{userStruct.age});
         return CustomError.HIIIIIIIII;

@@ -9,7 +9,7 @@ pub const User: type = struct {
     }
 };
 
-
+// create user function creates a new user
 pub fn createUser(name: string, age: i64) User {
     return User{
         .name = name,

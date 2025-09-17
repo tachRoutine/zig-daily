@@ -1,8 +1,8 @@
 const std = @import("std");
 
-const CustomError = error{ InvalidAge, UnrealisticAge, HIIIIIIIII };
-const print = std.debug.print;
-const User = struct {
+const CustomError: type = error{ InvalidAge, UnrealisticAge, HIIIIIIIII };
+pub const print = std.debug.print;
+const User: type = struct {
     name: []const u8,
     age: i32,
     fn greetUser(self: *User) void {
@@ -20,7 +20,7 @@ pub fn main() !void {
         return CustomError.HIIIIIIIII;
     } else if (user.age > 120) {
         print("Error: Unrealistic age {d}\n", .{user.age});
-        std.debug.panic("Common man");
+        std.debug.panic("Common man", .{});
         return CustomError.UnrealisticAge;
     }
 

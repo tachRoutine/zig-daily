@@ -7,3 +7,10 @@ pub const User: type = struct {
         main.print("Hello, {s}!\n", .{self.name});
     }
 };
+
+pub fn getUserInfo() User {
+    return User{
+        .name = "Bob",
+        .age = 30,
+    };
+}

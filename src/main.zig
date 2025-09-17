@@ -12,7 +12,7 @@ const User = struct {
 pub fn main() !void {
     var user = User{
         .name = "Alice",
-        .age = -1,
+        .age = 100000,
     };
     user.greetUser();
     if (user.age < 0) {
@@ -20,6 +20,7 @@ pub fn main() !void {
         return CustomError.HIIIIIIIII;
     } else if (user.age > 120) {
         print("Error: Unrealistic age {d}\n", .{user.age});
+        std.debug.panic("Common man");
         return CustomError.UnrealisticAge;
     }
 
